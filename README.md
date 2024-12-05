@@ -110,3 +110,20 @@
 
     ![alt text](image-3.png)
 
+## **Praktikum 5 - Multiple stream subscriptions**
+
+### **Soal 10:**
+* Jelaskan mengapa error itu bisa terjadi ?
+    **Jawab:**
+
+    Error ini terjadi karena mencoba (listen) pada stream yang sama lebih dari satu kali. Secara default, Stream pada Dart hanya mendukung satu listener aktif pada satu waktu (kecuali kita menggunakan broadcast stream).
+
+### **Soal 11:**
+* Jelaskan mengapa hal itu bisa terjadi ?
+    **Jawab:**
+
+    Hal ini terjadi karena mekanisme pembaruan values yang berasal dari dua atau lebih listener yang terhubung ke Stream yang sama. Setiap listener memancarkan perubahan secara independen, sehingga menyebabkan widget menerima banyak pembaruan dan menampilkan semua nilai tersebut. Untuk mengatasi ini, pastikan bahwa hanya satu listener yang mengelola pembaruan values, atau gunakan mekanisme pengelolaan state seperti StreamBuilder untuk memastikan pembaruan terjadi secara terkoordinasi.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+    ![alt text](gif/praktikum5.gif)
