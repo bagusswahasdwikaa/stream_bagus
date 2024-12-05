@@ -51,4 +51,29 @@
 
 ## **Praktikum 2 - Stream controllers dan sinks**
 
-### **Soal 1:**
+### **Soal 6:**
+* Jelaskan maksud kode langkah 8 dan 10 tersebut!
+    **Jawab:**
+
+    - initState: Membuat stream dan memasang listener untuk mendeteksi angka baru yang dipancarkan.
+    Proses yang dilakukan yaitu :
+    Pada metode initState, sebuah stream dibuat dan listener dipasang untuk mendengarkan angka-angka yang dipancarkan oleh stream.
+    Setiap kali stream memancarkan angka baru, listener akan menangkapnya dan memperbarui nilai variabel lastNumber dengan angka terbaru. Jika aplikasi menggunakan setState, UI akan diperbarui untuk mencerminkan perubahan tersebut.
+    - addRandomNumber: Menghasilkan angka baru secara acak, menambahkannya ke stream, dan membiarkan listener menangani pembaruan UI.
+    Proses yang dilakukan yaitu :
+    Sebuah angka acak dibuat menggunakan fungsi pembangkit angka acak (misalnya Random()).
+    Angka ini kemudian ditambahkan ke stream menggunakan mekanisme pengiriman data (seperti add pada StreamController).
+    Listener yang sebelumnya dipasang di initState menerima angka baru ini, memperbarui variabel lastNumber, dan memicu pembaruan UI.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+    ![alt text](gif/praktikum2.1.gif)
+
+### **Soal 7:**
+* Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+    **Jawab:**
+
+    - addError memungkinkan kita untuk mengirimkan error ke dalam stream, seperti halnya mengirimkan data biasa.
+    - onError membantu aplikasi mendeteksi dan menangani error, sehingga dapat mengambil tindakan yang sesuai, seperti memperbarui UI atau memberikan pesan kesalahan kepada pengguna.
+    - addRandomNumber Fungsi ini dimodifikasi untuk mengirimkan error alih-alih angka acak, sehingga memvalidasi apakah aplikasi dapat menangani situasi error dengan benar.
+
+* Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.!
