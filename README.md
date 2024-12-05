@@ -66,6 +66,7 @@
     Listener yang sebelumnya dipasang di initState menerima angka baru ini, memperbarui variabel lastNumber, dan memicu pembaruan UI.
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
     ![alt text](gif/praktikum2.1.gif)
 
 ### **Soal 7:**
@@ -77,3 +78,18 @@
     - addRandomNumber Fungsi ini dimodifikasi untuk mengirimkan error alih-alih angka acak, sehingga memvalidasi apakah aplikasi dapat menangani situasi error dengan benar.
 
 * Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.!
+
+## **Praktikum 3 - Injeksi data ke streams**
+
+### **Soal 8:**
+* Jelaskan maksud kode langkah 1-3 tersebut!
+    **Jawab:**
+    
+    - stream.transform(transformer): Menerapkan sebuah StreamTransformer untuk mengubah data dalam stream sebelum data tersebut diterima oleh pendengar (listener). Transformer ini memungkinkan modifikasi, filter, atau manipulasi data pada aliran sebelum data tersebut diproses lebih lanjut.
+    - listen((event) { ... }): Mendaftarkan pendengar ke stream untuk menerima setiap event (data) yang telah dimodifikasi oleh transformer. Dalam pendengar ini, Anda dapat menentukan bagaimana event akan diproses atau ditangani.
+    - setState: Digunakan untuk memperbarui state dari widget, misalnya mengubah nilai variabel lastNumber dengan data terbaru yang diterima dari stream (event). Ini memastikan UI widget diperbarui sesuai perubahan data.
+    - onError((error) { ... }): Menangani error yang terjadi di stream. Jika terjadi error, Anda dapat menentukan tindakan yang diambil, seperti mengubah state lastNumber menjadi -1 sebagai indikator kesalahan.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+    ![alt text](gif/praktikum3.gif)

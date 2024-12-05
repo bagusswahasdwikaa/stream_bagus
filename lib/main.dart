@@ -32,16 +32,26 @@ class _StreamHomePageState extends State<StreamHomePage> {
   int lastNumber = 0;
   late StreamController NumberStreamController;
   late NumberStream numberStream;
+  late StreamTransformer transformer;
 
   Color bgColor = Colors.blueGrey;
   late ColorStream colorStream;
 
   @override
   void initState() {
+    transformer = StreamTransformer<int, int>.fromHandlers(
+      handleData: (value, sink) {
+        sink.add(value * 10);
+      },
+      handleError: (error, trace, sink) {
+        sink.add(-1);
+      },
+      handleDone: (sink) => sink.close());
+
     numberStream = NumberStream();
-    NumberStreamController = numberStream.controller;
+    NumberStreamController = numberStream.controller;  
     Stream stream = NumberStreamController.stream;
-    stream.listen((event){
+    stream.transform(transformer).listen((event){
       setState(() {
         lastNumber = event;
       });
@@ -84,7 +94,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Stream : Bagus Wahaswdika'), backgroundColor: Colors.blue,
+        title: const Text('Stream : Bagus Wahaswdika', style: TextStyle(color: Colors.white),), backgroundColor: Colors.blue,
       ),
       body: SizedBox(
         width: double.infinity,
