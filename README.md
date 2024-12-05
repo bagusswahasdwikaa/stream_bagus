@@ -93,3 +93,20 @@
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
     ![alt text](gif/praktikum3.gif)
+
+## **Praktikum 4 - Subscribe ke stream events**
+
+### **Soal 9:**
+* Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+    **Jawab:**
+
+    - StreamController digunakan untuk mengelola aliran data, biasanya dalam bentuk stream.
+    - StreamSubscription bertanggung jawab untuk mendengarkan event dari stream. Dengan membatalkan subscription, Anda mencegah event yang tidak diperlukan diterima.
+    - Menjaga controller agar tidak ditutup secara tidak sengaja memastikan aliran data tetap aktif selama diperlukan.
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+    ![alt text](image-2.png)
+
+    ![alt text](image-3.png)
+
