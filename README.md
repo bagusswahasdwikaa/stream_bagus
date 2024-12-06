@@ -128,7 +128,7 @@
 
     ![alt text](gif/praktikum5.gif)
 
-## **Praktikum - StreamsBuilder**
+## **Praktikum 6 - StreamBuilder**
 
 ### **Soal 12:**
 * Jelaskan maksud kode pada langkah 3 dan 7 ! 
@@ -163,3 +163,35 @@
 
 * Link Repo StreamBuilder: https://github.com/bagusswahasdwikaa/streambuilder_bagus
 
+## **Praktikum 7 - BLoC Pattern**
+
+### **Soal 13:**
+* Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ?
+    **Jawab:**
+
+    Praktikum ini bertujuan untuk memahami pola arsitektur BLoC dengan memisahkan logika bisnis dari antarmuka pengguna (UI). Aplikasi menghasilkan angka acak yang diperbarui secara otomatis di layar menggunakan stream saat tombol ditekan.
+
+    *Letak Konsep BLoC*
+    
+    Pemisahan Logika dan UI:
+    - Logika bisnis: Di random_bloc.dart, menghasilkan angka acak menggunakan stream.
+    - UI: Di random_screen.dart, hanya mendengarkan data dari stream dan mengirim perintah melalui sink.
+    
+    Komunikasi melalui Stream dan Sink:
+    - Stream (Output): Mengirim angka acak dari BLoC ke UI.
+    - Sink (Input): Menerima event dari UI untuk memproses angka acak.
+    
+    - StreamBuilder:
+    Menghubungkan UI dengan stream untuk memperbarui tampilan secara otomatis.
+
+    - Pembuangan Data (Dispose):
+    Stream Controller ditutup di dispose() agar tidak terjadi kebocoran memori.
+
+    Pola ini menjamin aplikasi terstruktur, mudah di-maintain, dan efisien.
+
+
+* Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+![alt text](../streambuilder_bagus/gif/streambuilderhasil.gif)
+
+* Link Repo BLoC Pattern: https://github.com/bagusswahasdwikaa/bloc_random_bagus
