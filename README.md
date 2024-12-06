@@ -192,6 +192,6 @@
 
 * Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
-![alt text](../streambuilder_bagus/gif/streambuilderhasil.gif)
+    ![alt text](gif/blocPatternHasil.gif)
 
 * Link Repo BLoC Pattern: https://github.com/bagusswahasdwikaa/bloc_random_bagus
